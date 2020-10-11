@@ -61,9 +61,11 @@ public:
 
     FlagsEnum &operator|(T flag)
     {
-        this->set(flag, true);
+        FlagsEnum xd;
+        xd.value_ = this->value_;
+        xd.set(flag, true);
 
-        return *this;
+        return xd;
     }
 
     bool hasAny(FlagsEnum flags) const
